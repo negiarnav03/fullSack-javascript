@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM pt3</title>
+    <style>
+        .bg-color{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-color">
+    
+
+
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "Main"
+    div.id = "MyID"
+    div.setAttribute("title","MyTitle")
+    div.style.backgroundColor = "red"  
+    div.style.padding = "10px"   
+  //  div.innerText = "Cha cha cha" 
+
+    const text = document.createTextNode("Cha cha cha")
+    div.appendChild(text) 
+    document.body.appendChild(div)  
+</script>
+</html>

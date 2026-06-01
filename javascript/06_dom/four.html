@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOm pt4</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+
+    <ul class="language"    >
+        <li>Javascript</li>
+    </ul>
+
+</body>
+
+    
+<script>
+    function addLang(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLang("Python");
+
+    function addOpti(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOpti("cpp");
+    addOpti("django");
+    addOpti("nodejs");
+    addOpti("fastAPI");
+
+    // edit
+    const secLang = document.querySelector("li:nth-child(2)");
+    secLang.innerHTML = "Java";
+
+    // replace 
+    const newLi = document.createElement("li");
+    newLi.textContent = "Mojo";
+    secLang.replaceWith(newLi);
+
+    // using outer html to replace
+    const firstLang = document.querySelector("li:nth-child(1)");
+    firstLang.outerHTML = "<li>TypeScript</li>"
+
+    // remove
+     const lastLang = document.querySelector("li:last-child");
+     lastLang.remove(); 
+
+     // remove using removeChild
+     const parent = document.querySelector(".language");
+     const child = document.querySelector("li:last-child"); // :last-child does not take arguments
+     parent.removeChild(child);
+
+     // add via appendChild() method
+     const add = document.createElement("li");
+     add.appendChild(document.createTextNode("Rust"));
+     document.querySelector(".language").appendChild(add);
+
+
+     
+     // Remove an element from a specific place (1-indexed)
+     function removeLangAt(index) {
+         // Using CSS nth-child selector to find the exact item
+         // Note: nth-child is 1-indexed, so index 1 is the first item
+         const itemToRemove = document.querySelector(`li:nth-child(${index})`);
+         
+         if (itemToRemove) {
+             itemToRemove.remove();
+         } else {
+             console.log(`Item at index ${index} not found!`);
+         }
+     }
+     
+     // Example usage:
+     // removeLangAt(1); // removes the 1st item in the list
+
+    
+    
+</script>
+</html>

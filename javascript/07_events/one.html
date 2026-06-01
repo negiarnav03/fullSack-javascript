@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <style>
+        .pt2 {
+            background-color: #181717;
+            color: #ca1111;
+            font-size: 30px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        
+
+        
+    </style>
+</head>
+
+<body>
+    <h2> Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3536341/pexels-photo-3536341.jpeg" alt="Photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3808892/pexels-photo-3808892.jpeg"
+                    alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3987024/pexels-photo-3987024.jpeg"
+                    alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/5328515/pexels-photo-5328515.jpeg"
+                    alt=""></li>
+            <li><img width="200px" id="player" src="https://images.pexels.com/photos/6637270/pexels-photo-6637270.jpeg"
+                    alt=""></li>
+            <li><a href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+
+
+    <div class="pt2">
+        <div id="clock"></div>
+    </div>
+    <script>
+
+        // document.getElementById('owl').onclick=function(){
+        //     alert("Owl clicked")
+        // }
+
+        document.getElementById('owl').addEventListener('click', function () {
+            // alert("Owl clicked")
+        })
+
+        // type, timestamp, defaultPrevented
+        // target, toElement, srcElement, currentTarget
+        // clientX, clientY, screenX, screenY
+        // altKey, ctrlKey, shiftKey, metaKey, keyCode
+
+
+
+
+        // event propagation
+        // 1. event bubbling -> bottom to top -> false
+
+        //  document.getElementById('images').addEventListener('click',function(e){
+        //         console.log("images clicked") 
+        //     },false)
+
+        //  document.getElementById('owl').addEventListener('click',function(e){
+        //         console.log("Owl clicked") // first logs owl clicked then images clicked
+        //         e.stopPropagation()
+        //     },false) 
+
+
+
+
+        // 2. event capturing -> top to bottom -> true
+        // document.getElementById('images').addEventListener('click', function (e) {
+        //     console.log("images clicked")
+        //     e.stopPropagation() // to stop event propagation 
+        // }, true)
+
+        // document.getElementById('owl').addEventListener('click', function (e) {
+        //     console.log("Owl clicked") // first logs images clicked 
+
+        // }, true)
+
+
+
+
+        // to stop the default behavior of the event
+
+        // document.getElementById('google').addEventListener('click', function (e) {
+        //     e.preventDefault() // to prevent the default behavior of the event
+        //     console.log("Google clicked")
+        // }, false) 
+
+
+        // to dissappear images when clicked on it
+
+        document.querySelector('#images').addEventListener('click', function (e) {
+            //console.log(e)
+            console.log(e.target.tagName)
+            if(e.target.tagName==='IMG'){
+                let removeIT = e.target.parentNode
+                removeIT.remove();
+            }
+
+
+        //    removeIT. removeChild(e.target)
+        }, false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //to print the current date and time in the clock
+
+        //date
+
+        const date = new Date();
+        console.log(date);
+
+        //time
+
+        const time = date.toLocaleTimeString();
+        console.log(time);
+
+        // to print the current date and time in the clock with every updated second
+
+        const clock = document.getElementById('clock');
+
+        setInterval(function () {
+            let date = new Date();
+            clock.innerHTML = date.toLocaleTimeString();
+        }, 1000);
+
+
+
+    </script>
+</body>
+
+</html>

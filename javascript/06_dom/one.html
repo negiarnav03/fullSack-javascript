@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM LEARNING</title>
+    <style>
+        .bg-black {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning here rn <span class="text-danger">test text</span></h1>
+        <h2>hello this is h2</h2>
+        <h3>Lorem ipsum dolor sit.</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+
+        <ul>
+            <li class="list-item">first li</li>
+            <li class="list-item">second li</li>
+            <li class="list-item">third li</li>
+            <li class="list-item">fourth li</li>
+        </ul>
+    </div>
+</body>
+<script>
+  //  document.querySelector('#title').style.backgroundColor = "green"; 
+   document.querySelector('h1').style.backgroundColor = "yellow";
+   document.querySelector('h1').style.color = "green";
+   document.querySelector('#title').style.color = "blue";
+
+// 1) get the element with the id "title"
+const title = document.querySelector("#title");
+
+// 2) access its style property
+const styles = title.style;
+
+// 3) now you can change any CSS property
+styles.color = "blue";
+styles.backgroundColor = "yellow";
+styles.fontWeight = "bold";   // CSS uses camelCase in JS: backgroundColor, not background-color
+styles.fontSize = "32px";
+styles.textDecoration = "underline";
+
+console.log(styles);      // shows all CSS properties
+
+
+</script>
+`
+</html>
+
+<!--
+
+// title.innerText :  it will give us the exact text that is visible to the user
+// title.textContent : it will give us the exact text that is visible to the user including the hidden text
+// title.innerHTML : it will give us the exact text that is visible to the user including the hidden text and also the tags
+
+
+// to change HTML Collection and NodeList into array we use : array.from(htmlCollection) 
+//console.log(array.from(document.querySelectorAll('.list-item'))); 
+
+-->

@@ -1,0 +1,21 @@
+*{
+    margin: 10px;
+    padding: 0;
+}
+
+#boxmodel{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
+#purple{
+
+    border: 2px solid rgb(227, 221, 221);
+    height: 100px;
+    width: 100px;
+    background-color: purple;
+}        
+#purple p{
+
+    padding: 5px;
+}
