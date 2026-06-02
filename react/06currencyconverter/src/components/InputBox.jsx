@@ -14,7 +14,7 @@ function InputBox({
     className = "",
 }) {
    
-    const amountInputId = useId();
+    const amountInputId = useId(); // used to generate a unique id for the input tag. 
 
     return (
         <div className={`bg-white p-3 rounded-lg text-sm flex ${className} `}>

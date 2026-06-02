@@ -15,9 +15,9 @@ function App() {
   const passwordRef= useRef(null) // it will refer to the input field
 
   const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select()
+    passwordRef.current?.select() // selects the text in the input field
     passwordRef.current?.setSelectionRange(0, 9999) // for mobile devices
-    window.navigator.clipboard.writeText(password)
+    window.navigator.clipboard.writeText(password) // copies the text to the clipboard
     // setCopyText("Copied!")
     // setTimeout(() => {
     //   setCopyText("Copy")
@@ -114,3 +114,42 @@ function App() {
 }
 
 export default App
+
+
+/*
+way 1 to copy  (window.navigator.clipboard.writeText)  -> deprecated
+// Function to write text to clipboard
+const copyToClipboard = () => {
+  window.navigator.clipboard.writeText("Text you want to copy");
+};
+
+way 2 to copy  (document.execCommand) -> deprecated
+// Function to write text to clipboard
+const copyToClipboard = () => {
+  document.execCommand("copy");
+};
+
+way 3 to copy (clipboard API)
+import { useRef } from 'react';
+
+function App() {
+  const inputRef = useRef(null);
+
+  const handleCopy = () => {
+    // 1. Select the text inside the input field
+    inputRef.current?.select();
+    inputRef.current?.setSelectionRange(0, 99999); // For mobile devices
+    
+    // 2. Copy the text to clipboard
+    window.navigator.clipboard.writeText(inputRef.current.value);
+  };
+
+  return (
+    <>
+      <input ref={inputRef} type="text" value="Text to copy" readOnly />
+      <button onClick={handleCopy}>Copy</button>
+    </>
+  );
+}
+
+*/

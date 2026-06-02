@@ -19,6 +19,10 @@ npm run dev
 # to install tailwaind
 npm install @tailwindcss/vite
 
+
+# to call react router dom
+npm install react-router-dom
+
 ```
 
 
