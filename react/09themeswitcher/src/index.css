@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
-
+/* it helps us to switch between light and dark mode apart from the systems preference */
 
 :root {
   --text: #6b6375;
