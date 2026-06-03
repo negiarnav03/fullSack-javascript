@@ -23,6 +23,11 @@ npm install @tailwindcss/vite
 # to call react router dom
 npm install react-router-dom
 
+
+# to install redux toolkit (RTK)
+npm install @reduxjs/toolkit react-redux
+
+
 ```
 
 
